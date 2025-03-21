@@ -26,7 +26,12 @@ class VistaModeloBasico{
             //print("Hola mundo desde controlador")
             series_registradas.append(InformacionSerie(nombre: "Prueba", Tipo: "Miedo", fecha_estreni: 1998, sinopsis: "Sinopsis muy muylarga jsjssjsj aqui va una descripcion perra", caratula: "Imagen_ejemplo1"))
         }
-        
+        estado_actual_de_la_aplicacion = .mostrando_series
         return true
+    }
+    
+    
+    func cambiar_a_agregar_serie() -> Void{
+        estado_actual_de_la_aplicacion = .agregando_series
     }
 }
