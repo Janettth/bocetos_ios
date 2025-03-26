@@ -8,38 +8,52 @@
 import SwiftUI
 
 struct GeneralPublicaciones: View {
-    @StateObject var controlador = ControladorPublicaciones()
+    //@StateObject var controlador = ControladorPublicaciones()
+    
+    @Environment(controladorAplicacion.self) var controlador
     
     var body: some View{
-        ScrollView{
-            VStack(alignment: HorizontalAlignment.leading){
-                ForEach(controlador.publicaciones){ publicacion in
-                    
-                    ZStack{
-                        RoundedRectangle(cornerSize: CGSize(width: 25, height: 25)).foregroundColor(.gray)
-                        
-                        VStack(alignment: HorizontalAlignment.leading){
-                            Text("\(publicacion.id)") .bold()
-                            Text("\(publicacion.title)")
-                                .bold()
-                                .font(.system(size: 25))
-                                
-                            Text("\(publicacion.body)")
-                        }.padding(10)
+        
+        NavigationStack{
+            ScrollView{
+                VStack(alignment: HorizontalAlignment.leading){
+                    ForEach(controlador.publicacaiones){ publicacion in
+                        NavigationLink{
+                            Text("Hola mundo")
                             
-                    }.padding()
-                    
-                    
-                }
-            }
-            .onAppear{
-                if(controlador.publicaciones.isEmpty){
-                    Task{
-                        await controlador.obtener_publicaciones()
+                        }label: {
+                            ZStack{
+                                RoundedRectangle(cornerSize: CGSize(width: 25, height: 25)).foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.15))
+                                
+                                VStack(alignment: HorizontalAlignment.leading){
+                                    Text("\(publicacion.id)")
+                                        .bold()
+                                        .padding(10)
+                                    
+                                    
+                                    Text("\(publicacion.title)")
+                                        .bold()
+                                    
+                                    Text("\(publicacion.body)")
+                                }.padding(10)
+                                
+                            }.padding()
+                                .onTapGesture {
+                                    /*controlador.mostrar_publicacion(publicacion.id)*/
+                                    print("Usted ha selecionado: \(publicacion.id)")
+                                }
+                        }
                     }
                 }
+                /*.onAppear{
+                 if(controlador.publicaciones.isEmpty){
+                 Task{
+                 await controlador.obtener_publicaciones()
+                 }
+                 }
+                 }*/
+                .padding(30)
             }
-            .padding(30)
         }
         
     }
@@ -48,4 +62,5 @@ struct GeneralPublicaciones: View {
 
 #Preview{
     GeneralPublicaciones()
+        .environment(controladorAplicacion())
 }
