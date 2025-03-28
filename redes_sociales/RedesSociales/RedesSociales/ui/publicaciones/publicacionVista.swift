@@ -17,15 +17,17 @@ struct PublicacionVista: View {
     
     //var publicacion_a_mostrar = controlador.publicacion_seleccionada
     var body: some View {
-        Text("\(controlador.publicacion_seleccionada?.title)")
-        Text("\(controlador.publicacion_seleccionada?.body)")
+        Text("\(controlador.publicacion_seleccionada?.title ?? "valor por defecto")")
+        Text("\(controlador.publicacion_seleccionada?.body ?? "valor por defecto")")
         
         
         NavigationLink{
-            Text("hola mundi")
+           PublicacionVista()
         }label:{
             Text("ver perfil")
-        }
+        }.simultaneousGesture(TapGesture().onEnded({
+            controlador.ver_perfil(id: controlador.publicacion_seleccionada!.userId)
+        }))
         
         ScrollView{
             VStack{
