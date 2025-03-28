@@ -16,12 +16,13 @@ struct GeneralPublicaciones: View {
         
         NavigationStack{
             ScrollView{
-                VStack(alignment: HorizontalAlignment.leading){
+                VStack(alignment: HorizontalAlignment.center){
                     ForEach(controlador.publicacaiones){ publicacion in
                         NavigationLink{
-                            Text("Hola mundo")
+                            PublicacionVista()
                             
                         }label: {
+                            
                             ZStack{
                                 RoundedRectangle(cornerSize: CGSize(width: 25, height: 25)).foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.15))
                                 
@@ -36,13 +37,19 @@ struct GeneralPublicaciones: View {
                                     
                                     Text("\(publicacion.body)")
                                 }.padding(10)
+                                    .foregroundColor(.black)
                                 
                             }.padding()
-                                .onTapGesture {
-                                    /*controlador.mostrar_publicacion(publicacion.id)*/
+                            
+                           
+                            
+                            /* .onTapGesture {
+                                   controlador.mostrar_publicacion(publicacion.id)
                                     print("Usted ha selecionado: \(publicacion.id)")
-                                }
-                        }
+                                }*/
+                        } .simultaneousGesture(TapGesture().onEnded({
+                            controlador.seleccionar_publicacion(publicacion)
+                        }))
                     }
                 }
                 /*.onAppear{
