@@ -24,13 +24,12 @@ struct GeneralPublicaciones: View {
                         }label: {
                             
                             ZStack{
-                                RoundedRectangle(cornerSize: CGSize(width: 25, height: 25)).foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.15))
+                                RoundedRectangle(cornerSize: CGSize(width: 25, height: 25)).foregroundColor(Color(red: 1, green: 1, blue: 1, opacity: 0.7))
                                 
                                 VStack(alignment: HorizontalAlignment.leading){
                                     Text("\(publicacion.id)")
                                         .bold()
                                         .padding(10)
-                                    
                                     
                                     Text("\(publicacion.title)")
                                         .bold()
@@ -59,8 +58,12 @@ struct GeneralPublicaciones: View {
                  }
                  }
                  }*/
+                
                 .padding(30)
-            }
+               
+                
+            }.background(Color(red: 0.5, green: 0.25, blue: 0.4, opacity: 0.5))
+            .frame(width: .infinity, height: .infinity)
         }
         
     }

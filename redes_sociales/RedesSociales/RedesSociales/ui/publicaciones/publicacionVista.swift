@@ -17,26 +17,51 @@ struct PublicacionVista: View {
     
     //var publicacion_a_mostrar = controlador.publicacion_seleccionada
     var body: some View {
-        Text("\(controlador.publicacion_seleccionada?.title ?? "valor por defecto")")
-        Text("\(controlador.publicacion_seleccionada?.body ?? "valor por defecto")")
         
-        
-        NavigationLink{
-           PublicacionVista()
-        }label:{
-            Text("ver perfil")
-        }.simultaneousGesture(TapGesture().onEnded({
-            controlador.ver_perfil(id: controlador.publicacion_seleccionada!.userId)
-        }))
-        
-        ScrollView{
-            VStack{
-                ForEach(controlador.comentarios){comentario in
-                    Text("Usuario \(comentario.name)")
-                    Text("\(comentario.body)")
+        VStack(alignment: HorizontalAlignment.center){
+            
+            Text("\(controlador.publicacion_seleccionada?.title ?? "valor por defecto")")
+                .font(.system(size: 22).bold())
+            
+            
+            ZStack{
+                RoundedRectangle(cornerSize: CGSize(width: 25, height: 25))
+                    .foregroundColor(Color(red: 0.5, green: 0.25, blue: 0.4, opacity: 0.5))
+                
+                Text("\(controlador.publicacion_seleccionada?.body ?? "valor por defecto")")
+            }.padding(20)
+            
+            NavigationLink{
+               PublicacionVista()
+            }label:{
+                Text("ver perfil")
+            }.simultaneousGesture(TapGesture().onEnded({
+                controlador.ver_perfil(id: controlador.publicacion_seleccionada!.userId)
+            }))
+            
+            
+            ScrollView{
+                
+                VStack{
+                    ForEach(controlador.comentarios){comentario in
+                        
+                        ZStack{
+                            RoundedRectangle(cornerSize: CGSize(width: 25, height: 25)).foregroundColor(Color(red: 0.5, green: 0.25, blue: 0.4, opacity: 0.5))
+                            
+                            Text("Usuario \(comentario.name)") .bold()
+                            Text("\(comentario.body)")
+                        }
+                       
+                    }
                 }
             }
-        }
+        }.padding(30)
+        
+            
+       
+        
+        
+       
     }
 }
 
@@ -48,3 +73,4 @@ struct PublicacionVista: View {
     }
    
 }
+
