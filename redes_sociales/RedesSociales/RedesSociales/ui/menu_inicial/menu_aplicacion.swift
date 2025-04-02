@@ -21,6 +21,11 @@ struct MenuNavegacion: View {
 
             Text("Hola dos")
                 .tabItem {
+                    /*Label{
+                        VStack{
+                            Text("")
+                        }
+                    }*/
                     /*
                     Label{
                         Text("Hola uno")

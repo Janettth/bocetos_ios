@@ -21,8 +21,15 @@ public class controladorAplicacion{
     init(){
         Task.detached(priority: .high){
             await self.desdescargar_publicaciones()
+            
+            await self.descagar_monos_chinos()
         }
     }
+    
+    func descagar_monos_chinos() async{
+        await print(DragonBallApi().descargar_pagina_personajes())
+    }
+    
     
     func desdescargar_publicaciones() async{
         
