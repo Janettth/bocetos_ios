@@ -21,6 +21,7 @@
 		FBD0C84C2D9453700036BD8F /* controlador_app.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD0C84B2D9453700036BD8F /* controlador_app.swift */; };
 		FBD0C8502D945F5B0036BD8F /* publicacionVista.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD0C84F2D945F5B0036BD8F /* publicacionVista.swift */; };
 		FBD0C8522D9463310036BD8F /* comentario.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD0C8512D9463310036BD8F /* comentario.swift */; };
+		FBD0E0CE2DA0341300043302 /* pantalla_personajes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD0E0CD2DA0341300043302 /* pantalla_personajes.swift */; };
 		FBDC383A2D9AEC7C0021F015 /* menu_aplicacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDC38392D9AEC7C0021F015 /* menu_aplicacion.swift */; };
 		FBE0EED82D9D942A0079733A /* mono_chino.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE0EED72D9D942A0079733A /* mono_chino.swift */; };
 		FBE0EEDA2D9D966E0079733A /* planeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE0EED92D9D966E0079733A /* planeta.swift */; };
@@ -45,6 +46,7 @@
 		FBD0C84B2D9453700036BD8F /* controlador_app.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = controlador_app.swift; sourceTree = "<group>"; };
 		FBD0C84F2D945F5B0036BD8F /* publicacionVista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = publicacionVista.swift; sourceTree = "<group>"; };
 		FBD0C8512D9463310036BD8F /* comentario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = comentario.swift; sourceTree = "<group>"; };
+		FBD0E0CD2DA0341300043302 /* pantalla_personajes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pantalla_personajes.swift; sourceTree = "<group>"; };
 		FBDC38392D9AEC7C0021F015 /* menu_aplicacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menu_aplicacion.swift; sourceTree = "<group>"; };
 		FBE0EED72D9D942A0079733A /* mono_chino.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mono_chino.swift; sourceTree = "<group>"; };
 		FBE0EED92D9D966E0079733A /* planeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = planeta.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		FB0744012D91BDEA00E26A46 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				FBD0E0CC2DA033EF00043302 /* dragon_ball */,
 				FBDC38382D9AEC0A0021F015 /* menu_inicial */,
 				FB16EAF32D97044100CB9D8F /* perfil_basico */,
 				FB0744022D91BE0000E26A46 /* publicaciones */,
@@ -158,6 +161,14 @@
 				FB16EAF42D97045700CB9D8F /* perfil_vista_basica.swift */,
 			);
 			path = perfil_basico;
+			sourceTree = "<group>";
+		};
+		FBD0E0CC2DA033EF00043302 /* dragon_ball */ = {
+			isa = PBXGroup;
+			children = (
+				FBD0E0CD2DA0341300043302 /* pantalla_personajes.swift */,
+			);
+			path = dragon_ball;
 			sourceTree = "<group>";
 		};
 		FBDC38382D9AEC0A0021F015 /* menu_inicial */ = {
@@ -259,6 +270,7 @@
 			files = (
 				FBDC383A2D9AEC7C0021F015 /* menu_aplicacion.swift in Sources */,
 				FB0744042D91BE2100E26A46 /* publicaciones_general.swift in Sources */,
+				FBD0E0CE2DA0341300043302 /* pantalla_personajes.swift in Sources */,
 				FBD0C8502D945F5B0036BD8F /* publicacionVista.swift in Sources */,
 				FB16EAF52D97045700CB9D8F /* perfil_vista_basica.swift in Sources */,
 				FB0743FC2D91B49E00E26A46 /* placeholder_api.swift in Sources */,

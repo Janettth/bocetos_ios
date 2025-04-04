@@ -19,23 +19,18 @@ struct MenuNavegacion: View {
                        
                 } .badge(controlador.publicacaiones.count)
 
-            Text("Hola dos")
+            PantallaPersonajes()
                 .tabItem {
-                    /*Label{
-                        VStack{
-                            Text("")
-                        }
-                    }*/
-                    /*
                     Label{
-                        Text("Hola uno")
-                        Text("Hola dos")
-                    }icon:{
-                    Circle()
-                        .frame(width: 44, height: 44, alignment: .center)
-                        .overlay(Text("holaaaaa"))
-                }*/
-                    Label ("otro texto", systemImage: "triangle")
+                        VStack{
+                            Text("Dragon Ball DB")
+                        }
+                    }icon: {
+                        Circle()
+                            .frame(width: 44, height: 44, alignment: .center)
+                            .overlay(Text("JJ Abedhdefb"))
+                    }
+            
                 }
             
             Text("Hola desde pantalla 3")

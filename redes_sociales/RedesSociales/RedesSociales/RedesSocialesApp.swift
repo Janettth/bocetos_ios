@@ -13,7 +13,7 @@ struct RedesSocialesApp: App {
     @State var controlador = controladorAplicacion()
     var body: some Scene {
         WindowGroup {
-           GeneralPublicaciones()
+            MenuNavegacion()
                 .environment(controlador)
         }
     }
