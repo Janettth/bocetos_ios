@@ -22,6 +22,7 @@
 		FBD0C8502D945F5B0036BD8F /* publicacionVista.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD0C84F2D945F5B0036BD8F /* publicacionVista.swift */; };
 		FBD0C8522D9463310036BD8F /* comentario.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD0C8512D9463310036BD8F /* comentario.swift */; };
 		FBD0E0CE2DA0341300043302 /* pantalla_personajes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD0E0CD2DA0341300043302 /* pantalla_personajes.swift */; };
+		FBD965EA2DA426D800031269 /* personaje_completo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD965E92DA426D800031269 /* personaje_completo.swift */; };
 		FBDC383A2D9AEC7C0021F015 /* menu_aplicacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDC38392D9AEC7C0021F015 /* menu_aplicacion.swift */; };
 		FBE0EED82D9D942A0079733A /* mono_chino.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE0EED72D9D942A0079733A /* mono_chino.swift */; };
 		FBE0EEDA2D9D966E0079733A /* planeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE0EED92D9D966E0079733A /* planeta.swift */; };
@@ -47,6 +48,7 @@
 		FBD0C84F2D945F5B0036BD8F /* publicacionVista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = publicacionVista.swift; sourceTree = "<group>"; };
 		FBD0C8512D9463310036BD8F /* comentario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = comentario.swift; sourceTree = "<group>"; };
 		FBD0E0CD2DA0341300043302 /* pantalla_personajes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pantalla_personajes.swift; sourceTree = "<group>"; };
+		FBD965E92DA426D800031269 /* personaje_completo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personaje_completo.swift; sourceTree = "<group>"; };
 		FBDC38392D9AEC7C0021F015 /* menu_aplicacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menu_aplicacion.swift; sourceTree = "<group>"; };
 		FBE0EED72D9D942A0079733A /* mono_chino.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mono_chino.swift; sourceTree = "<group>"; };
 		FBE0EED92D9D966E0079733A /* planeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = planeta.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				FBD0E0CD2DA0341300043302 /* pantalla_personajes.swift */,
+				FBD965E92DA426D800031269 /* personaje_completo.swift */,
 			);
 			path = dragon_ball;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				FB0743FC2D91B49E00E26A46 /* placeholder_api.swift in Sources */,
 				FBE0EEDC2D9D97560079733A /* transformacion.swift in Sources */,
 				FB16EAF22D9700F700CB9D8F /* perfil.swift in Sources */,
+				FBD965EA2DA426D800031269 /* personaje_completo.swift in Sources */,
 				FBE0EEE12D9D9A800079733A /* pagina_resultados.swift in Sources */,
 				FB0743EB2D91B08C00E26A46 /* ContentView.swift in Sources */,
 				FBE0EEDE2D9D98B80079733A /* dragonball_api.swift in Sources */,

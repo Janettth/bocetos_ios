@@ -14,45 +14,55 @@ struct PantallaPersonajes: View {
     var body: some View {
         
         if(controlador.pagina_resultados != nil){
-            ScrollView{
-                LazyVStack{
-                    ForEach(controlador.pagina_resultados!.items){ personaje in
-                        ZStack{
-                            
-                            RoundedRectangle(cornerSize: CGSize(width: 30, height: 30))
-                                .frame(width: 250)
-                                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                                
-                            VStack{
-                                Text("\(personaje.name)")
-                                    .bold()
-                                HStack{
+            
+            NavigationStack{
+                ScrollView{
+                    LazyVStack{
+                        ForEach(controlador.pagina_resultados!.items){ personaje in
+                            NavigationLink{
+                                PersonajeDescripcion(personaje_informacion: personaje)
+                            }label: {
+                                ZStack{
                                     
-                                    AsyncImage(url: URL(string: personaje.image)){ image in
-                                        image.resizable()
-                                    } placeholder: {
-                                        ProgressView()
+                                    RoundedRectangle(cornerSize: CGSize(width: 30, height: 30))
+                                        .frame(width: 250)
+                                        .foregroundColor(.orange)
+                                        
+                                    VStack{
+                                        Text("\(personaje.name)")
+                                            
+                                            .bold()
+                                        
+                                        HStack{
+                                            
+                                            AsyncImage(url: URL(string: personaje.image)){ image in
+                                                image.resizable()
+                                            } placeholder: {
+                                                ProgressView()
+                                            }
+                                            .frame(width: 80, height: 200)
+                                            .padding()
+                                            
+                                        }
+                                    
+                                        
+                                       
+                                        
                                     }
-                                    .frame(width: 80, height: 200)
                                     .padding()
-                                    
-                                    Text("holaaa")
-                                        .padding()
+                                    .foregroundColor(.black)
                                 }
-                            
-                                
-                               
-                                
                             }
-                            .padding()
-                        }
-                       
                             
-                      
+                            
+                        }
                     }
-                } .frame(width: .infinity)
-                    .background(Color.blue)
+                    .background(Color(red: 0.5, green: 0.25, blue: 0.4, opacity: 0.5))
+                    .frame(width: .infinity, height: .infinity)
+                        
+                }
             }
+            
         }
     }
 }
