@@ -15,6 +15,8 @@ struct PersonajeDescripcion: View {
     
     var personaje_informacion: MonoChino
     
+    @Environment(controladorAplicacion.self) var controlador
+    
     var body: some View {
         
 

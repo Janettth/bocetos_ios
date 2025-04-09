@@ -7,9 +7,11 @@
 
 import SwiftUI
 
+
 struct PantallaPersonajes: View {
     
     @Environment(controladorAplicacion.self) var controlador
+    
     
     var body: some View {
         
@@ -20,6 +22,7 @@ struct PantallaPersonajes: View {
                     LazyVStack{
                         ForEach(controlador.pagina_resultados!.items){ personaje in
                             NavigationLink{
+                                //Text("\(controlador.persoanje)")
                                 PersonajeDescripcion(personaje_informacion: personaje)
                             }label: {
                                 ZStack{
@@ -52,12 +55,12 @@ struct PantallaPersonajes: View {
                                     .padding()
                                     .foregroundColor(.black)
                                 }
-                            }
-                            
+                            }.simultaneousGesture(TapGesture().onEnded({
+                                controlador.descargar_informacion_personaje(id: personaje.id)}))
                             
                         }
                     }
-                    .background(Color(red: 0.5, green: 0.25, blue: 0.4, opacity: 0.5))
+                    /*.background(Color(red: 0.5, green: 0.25, blue: 0.4, opacity: 0.5))*/
                     .frame(width: .infinity, height: .infinity)
                         
                 }
