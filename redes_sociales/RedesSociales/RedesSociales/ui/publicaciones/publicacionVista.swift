@@ -32,7 +32,7 @@ struct PublicacionVista: View {
             }.padding(20)
             
             NavigationLink{
-               PublicacionVista()
+               PerfilBasicoVista()
             }label:{
                 Text("ver perfil")
             }.simultaneousGesture(TapGesture().onEnded({
