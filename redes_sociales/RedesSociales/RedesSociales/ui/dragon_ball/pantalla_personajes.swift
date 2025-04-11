@@ -23,7 +23,7 @@ struct PantallaPersonajes: View {
                         ForEach(controlador.pagina_resultados!.items){ personaje in
                             NavigationLink{
                                 //Text("\(controlador.persoanje)")
-                                PersonajeDescripcion(personaje_informacion: personaje)
+                                PersonajeDescripcion()
                             }label: {
                                 ZStack{
                                     
