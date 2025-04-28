@@ -32,7 +32,7 @@ struct PersonajeDescripcion: View {
                         RoundedRectangle(cornerSize: CGSize(width: 25, height: 25))
                             .frame(width: 250, height: 50)
                             .foregroundColor(Color(red: 1, green: 1, blue: 1, opacity: 1))
-                        Text("\(controlador.persoanje?.name.description)").bold()
+                        Text("\(controlador.persoanje?.name)").bold()
                     }
                     
                     Spacer()
@@ -143,7 +143,7 @@ struct PersonajeDescripcion: View {
                             } placeholder: {
                                 ProgressView()
                             }
-                            .frame(width: .infinity)
+                            .frame(width: .infinity, height: 500)
                             .padding()
                             
                         }.padding(20)
@@ -154,9 +154,43 @@ struct PersonajeDescripcion: View {
                         RoundedRectangle(cornerSize: CGSize(width: 25, height: 25))
                             .foregroundColor(Color(red: 1, green: 1, blue: 1, opacity: 0.5))
                         
-                
-                        Text("\(controlador.persoanje?.transformations)")
-                            .padding()
+                        VStack{
+                            Text("Transfromaciones")
+                            
+                            if(controlador.persoanje?.transformations != nil){
+                             
+                                NavigationStack{
+                                    
+                                    LazyVStack{
+                                        ForEach(controlador.persoanje!.transformations!){ transformacion in
+                                            
+                                            NavigationLink{
+                                                Text("\(transformacion.name)")
+                                            }label: {
+                                                
+                                                ZStack{
+                                                    RoundedRectangle(cornerSize: CGSize(width: 30, height: 30))
+                                                        .frame(width: 250, height: 70)
+                                                        .foregroundColor(.orange)
+                                                    
+                                                    VStack{
+                                                        Text("\(transformacion.name)")
+                                                            .foregroundStyle(Color.black)
+                                
+                                                    }
+                                                    
+                                                }
+                                              
+                                            }.padding(5)
+                                        }
+                                    }
+                                }
+                                
+                            }
+                            
+                        }.padding()
+                       
+                        
                       
                     }
                     

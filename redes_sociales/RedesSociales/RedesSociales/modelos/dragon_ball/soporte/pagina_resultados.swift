@@ -27,4 +27,13 @@ struct PaginaResultados: Codable{ //, Identifiable
     let items : [MonoChino]
     let meta : Meta
     let links : Enlaces
+    //let cantidad_resultados: Int
 }
+
+struct PaginaResultadosPlaneta: Codable{ //, Identifiable
+    //var id: Int = Self.meta.currentPage
+    let items : [Planeta]
+    let meta : Meta
+    let links : Enlaces
+}
+
