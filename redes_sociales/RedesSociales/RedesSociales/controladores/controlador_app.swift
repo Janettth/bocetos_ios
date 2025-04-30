@@ -23,6 +23,7 @@ public class controladorAplicacion{
     var pagina_resultados: PaginaResultados? = nil
     var persoanje: MonoChino? = nil
     
+    
     init(){
         Task.detached(priority: .high){
             await self.desdescargar_publicaciones()
@@ -50,6 +51,7 @@ public class controladorAplicacion{
             await self.descargar_info_personaje(id: id)
         })
     }
+
     
     
     func desdescargar_publicaciones() async{

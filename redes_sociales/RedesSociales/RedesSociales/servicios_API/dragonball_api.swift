@@ -22,6 +22,7 @@ class DragonBallApi: Codable{
         return await descargar(recurso: ubicacion_recurso)
     }
     
+    
     private func descargar<TipoGenerico: Codable>(recurso: String) async  -> TipoGenerico?{
         
         do{

@@ -113,6 +113,14 @@ struct PersonajeDescripcion: View {
                             }.frame(height: 40)
                           
                           
+                            AsyncImage(url: URL(string: controlador.persoanje?.originPlanet?.image ?? "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQd1kWKsODGmz1P44kiLTfpeIOkaemYITnaRVOZEn372xCyrpNoQQ_dMDAV4dWLpVTDFekNEtlkJaDnhlTzoQWdNg")){ image in
+                                image.resizable()
+                            } placeholder: {
+                                ProgressView()
+                            }
+                            .frame(width: 300, height: 300)
+                            .padding()
+                            
                             ZStack{
                                 RoundedRectangle(cornerSize: CGSize(width: 25, height: 25))
                                     .foregroundColor(Color(red: 1, green: 1, blue: 1, opacity: 0.5))
@@ -138,13 +146,7 @@ struct PersonajeDescripcion: View {
                             
                            
                             
-                            AsyncImage(url: URL(string: controlador.persoanje?.originPlanet?.image ?? "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQd1kWKsODGmz1P44kiLTfpeIOkaemYITnaRVOZEn372xCyrpNoQQ_dMDAV4dWLpVTDFekNEtlkJaDnhlTzoQWdNg")){ image in
-                                image.resizable()
-                            } placeholder: {
-                                ProgressView()
-                            }
-                            .frame(width: .infinity, height: 500)
-                            .padding()
+                           
                             
                         }.padding(20)
                         
@@ -165,7 +167,7 @@ struct PersonajeDescripcion: View {
                                         ForEach(controlador.persoanje!.transformations!){ transformacion in
                                             
                                             NavigationLink{
-                                                Text("\(transformacion.name)")
+                                                TransformacionPersonaje(transformacion: transformacion)
                                             }label: {
                                                 
                                                 ZStack{
