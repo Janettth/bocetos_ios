@@ -22,6 +22,8 @@ public class controladorAplicacion{
     
     var pagina_resultados: PaginaResultados? = nil
     var persoanje: MonoChino? = nil
+    var pagina_resultados_planetas: PaginaResultadosPlanetas? = nil
+    var planeta: Planeta? = nil
     
     
     init(){
@@ -37,6 +39,26 @@ public class controladorAplicacion{
         
         self.pagina_resultados = pagina_descargada
         //await DragonBallApi().descargar_pagina_personajes()
+    }
+    
+    func descargar_planetas() async{
+        guard let planetas_descargados: PaginaResultadosPlanetas = try? await DragonBallApi().descargar_pagina_planetas() else {return}
+        
+        self.pagina_resultados_planetas = planetas_descargados
+    }
+    
+    
+    func descrgar_info_planeta(id: Int) async {
+        guard let planeta_decargado = try? await DragonBallApi().descargar_informacion_planeta(id: id)
+        else {return}
+        
+        self.planeta = planeta_decargado
+    }
+    
+    func descargar_informacion_planeta(id: Int){
+        Task.detached(operation: {
+            await self.descrgar_info_planeta(id: id)
+        })
     }
     
     func descargar_info_personaje(id: Int) async {

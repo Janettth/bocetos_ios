@@ -30,7 +30,7 @@ struct PaginaResultados: Codable{ //, Identifiable
     //let cantidad_resultados: Int
 }
 
-struct PaginaResultadosPlaneta: Codable{ //, Identifiable
+struct PaginaResultadosPlanetas: Codable{ //, Identifiable
     //var id: Int = Self.meta.currentPage
     let items : [Planeta]
     let meta : Meta

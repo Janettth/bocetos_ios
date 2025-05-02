@@ -29,29 +29,56 @@ struct PerfilBasicoVista: View {
     
     var body: some View {
         
-        PhotosPicker(selection: $foto_seleccionada){
-            Image(uiImage: imagen_a_mostrar ?? UIImage(resource: .avatarYa))
-                .resizable()
-                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                .frame(width: 100, height: 100)
-                .clipShape(.circle)
-        }.onChange(of: foto_seleccionada){valor_anterior, valor_nuevo in
-            Task{
-                if let foto_seleccionada, let datos = try? await
-                    foto_seleccionada.loadTransferable(type: Data.self){
-                    if let imagen = UIImage(data: datos){
-                        imagen_a_mostrar = imagen
+        VStack{
+            
+            ZStack{
+                RoundedRectangle(cornerSize: CGSize(width: 25, height: 25))
+                    .foregroundColor(.white .opacity(0.5))
+                    .frame( width: .infinity, height: 30)
+                
+                Text("User: \(controlador.perfil_a_mostrar?.username ?? "valor por defecto")").bold()
+                    
+            }
+            .frame(width: .infinity, height: 30)
+            .padding()
+            
+            
+            PhotosPicker(selection: $foto_seleccionada){
+                Image(uiImage: imagen_a_mostrar ?? UIImage(resource: .avatarYa))
+                    .resizable()
+                    .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                    .frame(width: 100, height: 100)
+                    .clipShape(.circle)
+            }.onChange(of: foto_seleccionada){valor_anterior, valor_nuevo in
+                Task{
+                    if let foto_seleccionada, let datos = try? await
+                        foto_seleccionada.loadTransferable(type: Data.self){
+                        if let imagen = UIImage(data: datos){
+                            imagen_a_mostrar = imagen
+                        }
                     }
                 }
-            }
-        }
+            }.padding()
+            
         
-        Text("User: \(controlador.perfil_a_mostrar?.username ?? "valor por defecto")")
-        Text("Nombre: \(controlador.perfil_a_mostrar?.name ?? "valor por defecto")")
-        Text("Email: \(controlador.perfil_a_mostrar?.email ?? "valor por defecto")")
-            .onDisappear(){
-                print("Adios mundo")
-            }
+            ZStack{
+                RoundedRectangle(cornerSize: CGSize(width: 25, height: 25))
+                    .foregroundColor(.white .opacity(0.5))
+                    .frame( width: .infinity, height: 100)
+                
+                VStack{
+                    Text("Nombre: \(controlador.perfil_a_mostrar?.name ?? "valor por defecto")")
+                    Text("Email: \(controlador.perfil_a_mostrar?.email ?? "valor por defecto")")
+                        .onDisappear(){
+                            print("Adios mundo")
+                        }
+                }
+            }.padding()
+           
+        }.frame(width: .infinity, height: 1000)
+            .background(Color(red: 0.5, green: 0.25, blue: 0.4, opacity: 0.5))
+        
+       
     }
 }
 

@@ -23,7 +23,7 @@ struct MenuNavegacion: View {
                 .tabItem {
                     Label{
                         VStack{
-                            Text("Dragon Ball DB")
+                            Text("Personajes")
                         }
                     }icon: {
                         Circle()
@@ -33,9 +33,9 @@ struct MenuNavegacion: View {
             
                 }
             
-            Text("Hola desde pantalla 3")
+            PantallaPlanetas()
                 .tabItem {
-                    Label ("etiqueta", systemImage: "square")
+                    Label ("Planetas", systemImage: "square")
                 }
         }
     }

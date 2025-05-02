@@ -22,20 +22,45 @@ struct TransformacionPersonaje: View {
 
                 
                 HStack{
-                    Text("\(transformacion.id)")
-                    Text("\(transformacion.name)")
+                    
+                    ZStack{
+                        Circle().frame(width: 30)
+                            .foregroundColor(.white .opacity(0.5))
+                        
+                        Text("\(transformacion.id)")
+                    }
+                    
+                    ZStack{
+                        RoundedRectangle(cornerSize: CGSize(width: 25, height: 25))
+                            .foregroundColor(.white .opacity(0.5))
+                            .frame( width: 200, height: 30)
+                        Text("\(transformacion.name)")
+                    }
+                    
+                    
                 }
+                
+                ZStack{
+                    RoundedRectangle(cornerSize: CGSize(width: 25, height: 25))
+                        .foregroundColor(.white .opacity(0.5))
+                        .frame( width: .infinity, height: 30)
+                    Text("KI: \(transformacion.ki)")
+                }
+                .padding()
 
-                Text("KI: \(transformacion.ki)")
+               
+                
+                
                 AsyncImage(url: URL(string: transformacion.image)){ image in
                     image.resizable()
                 } placeholder: {
                     ProgressView()
                 }
-                .frame(width: 300, height: 300)
+                .frame(width: 200, height: 300)
                 .padding()
             }
         }.frame(width: 300, height: 500)
+            
 
         
         
