@@ -20,6 +20,17 @@ struct PantallaPersonajes: View {
             NavigationStack{
                 ScrollView{
                     LazyVStack{
+                        
+                        ZStack{
+                            RoundedRectangle(cornerSize: CGSize(width: 30, height: 30))
+                                .frame(width: .infinity, height: 100)
+                                .foregroundColor(.white)
+                                .opacity(0.5)
+                            
+                            Text("Personajes Dragon Ball").bold()
+                        }
+                        
+                        
                         ForEach(controlador.pagina_resultados!.items){ personaje in
                             NavigationLink{
                                 //Text("\(controlador.persoanje)")
@@ -60,8 +71,11 @@ struct PantallaPersonajes: View {
                             
                         }
                     }
-                    /*.background(Color(red: 0.5, green: 0.25, blue: 0.4, opacity: 0.5))*/
                     .frame(width: .infinity, height: .infinity)
+                    .padding()
+                    .background(Color(red: 0.5, green: 0.25, blue: 0.4, opacity: 0.5))
+                    
+                   
                         
                 }
             }
